@@ -18,6 +18,7 @@
 		- problèmes d'affichage
 		- éléments récurrents qui peuvent être mis dans un seul fichier, et ainsi la maintenance est faciliter
 		- utilisé le markdown dès que possible
+	- je participe aussi au site sur la génération des pages.
 
 # Base roulante
 - La base roulante à un code fonctionnel le but est maintenant de partitionner les différentes fonction du code en plusieurs classe pour plus lisibilité, plus facile à maintenir.
