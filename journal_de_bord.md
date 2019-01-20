@@ -38,3 +38,4 @@
 - Pour assurer le bon fonctionnement de l'association moi et Augustin Bielefeld avons mis en place un Slack pour la communication et deux Trello pour suivre l'avancement des projets.
 - Ainsi, pendant les vacances de noël j'ai pris du temps pour faire le tri et réorganiser les Trello. (3h)
 - Afin d'assurer que ces dispositifs soit utilisé je fais des rappels réguliers de consulter Trello.
+- Aider à mettre en place une formation pour le rangement pour ne pas accumuler du matériel inutile
