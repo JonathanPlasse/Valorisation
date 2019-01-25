@@ -34,6 +34,15 @@
 	- Odometry - pour situer le robot sur l'arène
 	- Communication - interface avec l'ordinateur, à définir plus amplement
 
+# Coupe de France de Robotique
+- Inscription
+	- Gestion de l'envoie du paiement
+	- Demande Inscription à un événement secondaire la Coupe de Belgique
+		- L'inscription est mise en attente car les équipes belges était prioritaire, nous nous sommes juste pré-inscrit.
+		- Dès fin novembre nous pouvions faire les démarches pour nous inscrire, mais n'ayant pas une liste défini des personne voulant aller a cet événement cela a été mis en attente
+		- Fin janvier, constitution de liste des personnes intéressé
+		- Calcul des frais approximatif de l'événement
+
 # Gestion de l'association
 - Pour assurer le bon fonctionnement de l'association moi et Augustin Bielefeld avons mis en place un Slack pour la communication et deux Trello pour suivre l'avancement des projets.
 - Ainsi, pendant les vacances de noël j'ai pris du temps pour faire le tri et réorganiser les Trello. (3h)
@@ -48,4 +57,12 @@
 	- Au moins une fois par semaine, faire une relecture du tableau dans le but de supprimer les cartes obsolètes, mettre à jour si besoin, créer de nouvelles cartes puis ranger le tout.
 	- Se demander si l'on peut trouver de nouvelles méthodes de rangement pour garder le Trello un espace organisé de réflexions et de suivi.
 	- Vérifier que les membres applique les consignes, et si les membres n'arrive pas à les suivre, il faudrait éventuellement modifier les méthodes qui ne fonctionne pas.
-	
+	- Application de la méthode SMART (Spécifique, Mesurable, Ambitieux, Réaliste, Temporel).
+- Mise en place des démarches à faire toute les années
+  - Convention pour l'utilisation des salles C138 et C107
+	- Faire parvenir des statistiques de l'ARTS comme la répartition des membres dans les différentes filières.
+- Mise en place des démarches pour la passation
+	- Invitation des anciens
+	- Transfert des connaissance
+	  - Book de passation personnel pour chaque rôle du bureau
+		- Compléter les actions qui doivent être entreprise toute l'année pour chaque rôles
