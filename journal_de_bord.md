@@ -39,3 +39,13 @@
 - Ainsi, pendant les vacances de noël j'ai pris du temps pour faire le tri et réorganiser les Trello. (3h)
 - Afin d'assurer que ces dispositifs soit utilisé je fais des rappels réguliers de consulter Trello.
 - Aider à mettre en place une formation pour le rangement pour ne pas accumuler du matériel inutile
+- Mise en place d'un nouveau système d'ordre du jour et d'actions pour les CA car la solution actuelle n'était pas efficace (24/01/2019). C'est avec Trello, que j'ai mis en place ce système
+	- Une liste _Ordre du Jour_ contient les différentes cartes (sujet) à aborder en CA.
+	- Une fois le CA finis. Les cartes sont rangées dans les listes adaptés ou sont mis dans Objectifs de la semaine avec une date butoir et au moins une personne responsable de la tâche.
+	- Ce système peut ainsi simplifié la rédaction du compte rendu du CA.
+- Réflexions sur les moyens à mettre en place pour garder un Trello lisible et rangé. (24/01/2019)
+  - Si beaucoup de carte sont à propos d'un sujet commun dans une catégorie, les regroupés en une seule et mettre dans la description et utilisé des checklists pour tenir à jour l'avancement des différentes catégorie.
+	- Au moins une fois par semaine, faire une relecture du tableau dans le but de supprimer les cartes obsolètes, mettre à jour si besoin, créer de nouvelles cartes puis ranger le tout.
+	- Se demander si l'on peut trouver de nouvelles méthodes de rangement pour garder le Trello un espace organisé de réflexions et de suivi.
+	- Vérifier que les membres applique les consignes, et si les membres n'arrive pas à les suivre, il faudrait éventuellement modifier les méthodes qui ne fonctionne pas.
+	
