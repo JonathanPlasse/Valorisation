@@ -55,16 +55,44 @@
 
 # Gestion de l'association
 ## Communication
-Pour assurer le bon fonctionnement de l'association moi et Augustin Bielefeld avons mis en place un Slack pour la communication et deux Trello pour suivre l'avancement des projets.
+- Pour assurer le bon fonctionnement de l'association moi et Augustin Bielefeld avons mis en place un Slack pour la communication et deux Trello pour suivre l'avancement des projets.
+- Afin d'assurer que ces dispositifs soit utilisé je fais des rappels réguliers de consulter Trello.
+- Mise en place de processus pour garder un Trello organisé
+
 ### Trello
-- Trie réguliers des cartes et listes
+- Mise en place de processus pour garder un Trello organisé
+	- carte générale avec du détails à l'intérieur
+	- liste très générale pour les contenir
+	- liste "À discuter", on déplace une carte dans cette liste car il y a besoin d'en discuter
+	- liste "À faire", on déplace une carte dans cette liste quand un élément au moins à besoin d'être traité
+- Règles pour les cartes dans "À faire"
+	- Une date limite doit être défini
+	- Une ou plusieurs personnes doivent être responsable de la cartes
+	- Une fois la tâche accompli, mettre à jour la carte puis la ranger
 
 ### Slack
+- S'assurer que chaque membre de l'ARTS puissent utiliser sur Slack
+	- Envoi des invitations par email
+	- Rappel d'utiliser aux séances hebdomadaires
+	- S'assurer que tout les membres soient sur toutes les chaînes
+- Création d'une nouvelle chaîne si le sujet est conséquent
+- Archiver les chaînes devenus inutiles
 
-##
+### Email
+- Constituer avec les fiches d'inscriptions et un formulaire rempli sur un ordinateur
+- Envoie hebdomadaire aux membres de l'association des activités prévu pour la séance du samedi
 
-- Afin d'assurer que ces dispositifs soit utilisé je fais des rappels réguliers de consulter Trello.
-- Aider à mettre en place une formation pour le rangement pour ne pas accumuler du matériel inutile
+## Conseil d'Administration
+### L'avant CA
+- Souvent organiser à partir de 13h en fonction de la disponibilité des membres du bureau
+- Message d'information sur Slack pour prévenir de la date du CA
+- Constitution de l'ordre du jour en utilisant la liste "À discuter" de Trello
+
+### Pendant le CA
+- Discussion des points dans l'ordre du jour (liste "À discuter")
+- La secrétaire prend des notes
+- Attributions des tâches à effectuer à un ou plusieurs membres avec une date butoir (déplacement carte dans liste "À faire")
+-
 - Mise en place d'un nouveau système d'ordre du jour et d'actions pour les CA car la solution actuelle n'était pas efficace (24/01/2019). C'est avec Trello, que j'ai mis en place ce système
 	- Une liste _Ordre du Jour_ contient les différentes cartes (sujet) à aborder en CA.
 	- Une fois le CA finis. Les cartes sont rangées dans les listes adaptés ou sont mis dans Objectifs de la semaine avec une date butoir et au moins une personne responsable de la tâche.
