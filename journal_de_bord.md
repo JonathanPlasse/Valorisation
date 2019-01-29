@@ -29,6 +29,19 @@
 		- utilisation d'un [site générateur d'icône](https://realfavicongenerator.net/)
 		- mise en place sur le site web
 
+# ROS
+## Qu'est ce que ROS ?
+…
+
+## Tutoriels
+- Configuration de ROS
+- Tests de ROS sur des examples
+- Créer ses propres packages
+
+# MQTT
+## Qu'est ce que MQTT
+…
+
 # Base roulante
 - La base roulante à un code fonctionnel le but est maintenant de partitionner les différentes fonction du code en plusieurs classe pour plus lisibilité, plus facile à maintenir.
 - Voici les différents classes envisager :
