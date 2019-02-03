@@ -82,6 +82,13 @@
 	- Une date limite doit être défini
 	- Une ou plusieurs personnes doivent être responsable de la cartes
 	- Une fois la tâche accompli, mettre à jour la carte puis la ranger
+- Création d'un second tableau "Ressources ARTS". Il a été créer pour désencombré le tableau "Administration ARTS" et séparer les actions à mener des ressources pour les réaliser. Il contient :
+  - Les processus de l'association
+	  - Communication
+		- Événement
+		- Veille, se tenir informer des avancées
+		- Carnet de bord
+	- Les liens avec l'Administration
 
 ### Slack
 - S'assurer que chaque membre de l'ARTS puissent utiliser sur Slack
