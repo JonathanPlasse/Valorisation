@@ -46,11 +46,17 @@
 - La base roulante à un code fonctionnel le but est maintenant de partitionner les différentes fonction du code en plusieurs classe pour plus lisibilité, plus facile à maintenir.
 - Voici les différents classes envisager :
 	- Motor - pour le contrôle d'un moteur (1h)
-	- Control - qui va se charger de l'asservissement
+	  - Encoder, pour connaître la position du moteur
+		- PID, pour asservir le moteur en vitesse ou en position
+			- S'inspirer de l'asservissement des Dynamixels et de CVRA
+		- La rampe de vitesse est à l'intérieur de cette classe
+	- Control - qui va contrôler les deux moteurs à tout instants, pour atteindre un point donné.
 	- Trajectory - pour la génération de trajectoire
 	- Odometry - pour situer le robot sur l'arène
-	- StateMachine - pour suivre les états du robot
+	  - Dispose d'un coefficient correcteur pour corriger la symétrie imparfaite du robot
+	- StateMachine - pour suivre les états du robot et élaborer une stratégie
 	- Communication - interface avec l'ordinateur, à définir plus amplement
+
 
 # Coupe de France de Robotique
 ## Inscription
