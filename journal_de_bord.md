@@ -60,12 +60,19 @@
 
 # Coupe de France de Robotique
 ## Inscription
-- Gestion de l'envoie du paiement
-- Demande Inscription à un événement secondaire la Coupe de Belgique
-	- L'inscription est mise en attente car les équipes belges était prioritaire, nous nous sommes juste pré-inscrit.
-	- Dès fin novembre nous pouvions faire les démarches pour nous inscrire, mais n'ayant pas une liste défini des personne voulant aller a cet événement cela a été mis en attente
-	- Fin janvier, constitution de liste des personnes intéressé
-	- Calcul des frais approximatif de l'événement
+- Utilisation de la plateforme poolzor
+  - Changement d'adresse email
+- Gestion de l'envoie du paiement par chèque
+
+## Coupe de Belgique
+- Demande sur poolzor de l'inscription
+- L'inscription est mise en attente car les équipes belges était prioritaire, nous nous sommes juste pré-inscrit.
+- Dès fin novembre nous pouvions faire les démarches pour nous inscrire, mais n'ayant pas une liste défini des personne voulant aller a cet événement cela a été mis en attente
+- Fin janvier, constitution de liste des personnes intéressé
+- Calcul des frais approximatif de l'événement
+- Règlements des frais par virement bancaire
+  - Problème, oubli de mettre le nom de l'équipe dans le libellé du virement
+	- Résolution, envoie d'un mail à l'organisation de l'événement 
 
 ## Suivi de l'avancement des robots
 - Programmation
