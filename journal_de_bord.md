@@ -29,19 +29,6 @@
 		- utilisation d'un [site générateur d'icône](https://realfavicongenerator.net/)
 		- mise en place sur le site web
 
-# ROS
-## Qu'est ce que ROS ?
-…
-
-## Tutoriels
-- Configuration de ROS
-- Tests de ROS sur des examples
-- Créer ses propres packages
-
-# MQTT
-## Qu'est ce que MQTT
-…
-
 # Base roulante
 - La base roulante à un code fonctionnel le but est maintenant de partitionner les différentes fonction du code en plusieurs classe pour plus lisibilité, plus facile à maintenir.
 - Voici les différents classes envisager :
@@ -72,7 +59,7 @@
 - Calcul des frais approximatif de l'événement
 - Règlements des frais par virement bancaire
   - Problème, oubli de mettre le nom de l'équipe dans le libellé du virement
-	- Résolution, envoie d'un mail à l'organisation de l'événement 
+	- Résolution, envoie d'un mail à l'organisation de l'événement
 
 ## Suivi de l'avancement des robots
 - Programmation
@@ -125,7 +112,6 @@
 - Discussion des points dans l'ordre du jour (liste "À discuter")
 - La secrétaire prend des notes
 - Attributions des tâches à effectuer à un ou plusieurs membres avec une date butoir (déplacement carte dans liste "À faire")
--
 - Mise en place d'un nouveau système d'ordre du jour et d'actions pour les CA car la solution actuelle n'était pas efficace (24/01/2019). C'est avec Trello, que j'ai mis en place ce système
 	- Une liste _Ordre du Jour_ contient les différentes cartes (sujet) à aborder en CA.
 	- Une fois le CA finis. Les cartes sont rangées dans les listes adaptés ou sont mis dans Objectifs de la semaine avec une date butoir et au moins une personne responsable de la tâche.
@@ -135,7 +121,6 @@
 	- Au moins une fois par semaine, faire une relecture du tableau dans le but de supprimer les cartes obsolètes, mettre à jour si besoin, créer de nouvelles cartes puis ranger le tout.
 	- Se demander si l'on peut trouver de nouvelles méthodes de rangement pour garder le Trello un espace organisé de réflexions et de suivi.
 	- Vérifier que les membres applique les consignes, et si les membres n'arrive pas à les suivre, il faudrait éventuellement modifier les méthodes qui ne fonctionne pas.
-	- Application de la méthode SMART (Spécifique, Mesurable, Ambitieux, Réaliste, Temporel).
 - Mise en place de la convention de la C138
 - Mise en place des démarches à faire toute les années
   - Convention pour l'utilisation des salles C138 et C107
