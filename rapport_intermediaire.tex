@@ -18,22 +18,49 @@
 \chapter*{Introduction}
   Dès le début de cette année je me suis investi dans l'association robot dans le but de l'améliorer et la promouvoir.
   Pour cela je me suis investi autant dans les projets robotique de l'ARTS que dans l'administration.
-  Mon but étant de mettre en place des systèmes qui perdure dans le temps et qui facilitera les générations futures de l'association.
+  Mon but étant de mettre en place des systèmes qui permettront la transmission de connaissance et de savoir pour les générations futures de l'association.
 
   Pour cela, je travaille sur un code de contr\^ole d'une base roulante compréhensible et modulaire afin qu'il soit réutilisable dans les années à venir.
-  Je suis aussi en train de réaliser des utilitaires pour pouvoir régler les paramètres des robots facilement. Je suis en train de développer un utilitaire pour régler facilement le PID d'un moteur.
+  Je suis aussi en train de réaliser des utilitaires pour pouvoir régler les paramètres des robots facilement. Par exemple, un utilitaire pour régler facilement le PID d'un moteur.
 
-  De plus je m'investis aussi dans l'administration de l'ARTS en tant que membre du bureau et t\^ache à améliorer et faciliter la gestion de l'association.
+  De plus je m'investis aussi dans l'administration de l'ARTS en tant que responsable coupe et membre du bureau. Je t\^ache à améliorer et faciliter la gestion de l'association.
 
-\chapter{Réalisation de projet}
+\chapter{Réalisation de projets robotiques}
+
+
   \section{Base roulante}
-    \subsection{Premier prototype}
-    \subsection{Refonte du code}
-    \subsection{Création d'une méthode de réglage de PID}
+    Une base roulante est ce qui permet au robot de se déplacer. Le but de ce projet de fournir une méthode pour en concevoir et programmer une. Ma partie sur ce projet est la programmation.
+
+    \subsection{Recherches}
+      N'ayant aucune connaissance au préalable, j'ai effectuer des recherche sur tout d'abord sur comment asservir un moteur à courant continu car c'est autour de ceci que l'on peut construire un code de déplacement. Ensuite, j'ai chercher des projets similaire au mien.
+      J'ai couplé la recherche avec l'implémentation de solutions trouvés. Ce qui permet de vérifier si l'on est sur la bonne voie.
+      Quelques équipes participant à la coupe de France de robotique on mis à disposition des explications sur le fonctionnement de leur code de déplacement. Comme Cubot, ClubElek, RCVA…
+      Au fur et à mesure de mes recherche j'ai établi une liste de fonction à implémenter pour le code de déplacement de la base roulante.
+
+    \subsection{Fonctions à implémenter}
+      \subsubsection{Asservissement des moteurs}
+        Comme il est expliquer précédemment, l'asservissement des moteurs est la base du code de déplacement. Ici, j'ai choisi d'asservir les moteurs en vitesse.
+
+        Pour réaliser cette asservissement, il faut pouvoir mesurer la vitesse des moteurs. Ainsi, j'utilise les codeurs à quadrature de phase des moteurs.
+        Un codeur à quadrature de phase génère deux signaux carré déphasé l'un par rapport à l'autre. On peut ainsi déduire la position en regardant quand l'un des deux signals change.
+        %image de quadrature de phase
+        Pour récuper la position d'un codeur à quadrature de phase j'utilise la bibliothèque de Encoder de Paul Stoffregen qui utilise les interruptions pour calculer la position d'un codeur. Cette bibliothèque peut utiliser 0, 1 ou 2 interruptions pour un codeur. 2 interruption utilise une interruption pour chaque signal, c'est la solution la plus fiable. 1 interruption n'en utilise qu'une pour un seul signal ce qui est moins fiable mais c'est négligeable dans notre cas car l'arduino est assez rapide. 0 interruption est une solution à éviter dans la mesure du possible.
+
+        Pour ce projet, j'ai choisi d'utiliser la solution avec une interruption par codeur à cause d'une contrainte technique : l'arduino n'a que deux interruptions externes.
+      \subsubsection{Génération des consignes de vitesse}
+        avec profil de vitesse (rampe)
+      \subsubsection{Odométrie}
+
+      \subsubsection{Génération de trajectoire}
+
+  \section{Utilitaire de réglage de PID}
   \section{Site Internet}
     \subsection{Choix de technologie}
     \subsection{Formation}
     \subsection{Réalisation}
+  \section{Future projet}
+    \subsection{Formation sur ESP8266}
+    \subsection{Formation sur ROS}
 
 \chapter{Gestion de l'association}
   En ce début de cette année scolaire 2018/2019, Augustin Bielefeld et moi même avons établis différents sujets de réflexions afin d'améliorer le fonctionnement de l'association.
