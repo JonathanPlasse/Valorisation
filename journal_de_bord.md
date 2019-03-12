@@ -16,6 +16,26 @@
 	- Traduction en français des différents éléments du site
 	- Création d'une collections d'auteurs (2h)
 
+## Nom de domaine
+### Choix du nom de domaine
+- Choix en CA du nom de domaine robotps
+- Recherche sur internet de site pour acheter un nom de domaine
+  - [GoDaddy](www.godaddy.com) choisi pour ses tarifs
+	- [robot-ps.com](robot-ps.com)
+
+### Mise en place
+- On peut utiliser différents types de nom de domaine
+	- sous-domaine www : www.robot-ps.com
+	  - GitHub recommande cette solution ([raison](https://help.github.com/en/articles/about-supported-custom-domains#www-subdomains))
+	- apex domaine : robot-ps.com
+	  - Moins stable car si GitHub change l'adresse IP de ses serveurs, il faudra modifier la configuration du DNS.
+	- "sous-domaine" un sous domaine personnalisé : "sous-domaine".robot-ps.com
+
+- Utilisation de ce [tutoriel](http://andrewsturges.com/blog/jekyll/tutorial/2014/11/06/github-and-godaddy.html).
+  - Étape 4 - l'adresse IP n'est plus à jour. Voir [ici](https://help.github.com/en/articles/setting-up-an-apex-domain#configuring-a-records-with-your-dns-provider) pour la liste des adresses IP utilisable actuellement.
+- Plus d'information, voir [documentation](https://help.github.com/en/articles/using-a-custom-domain-with-github-pages) de GitHub.
+
+
 ## Esthétique
 - Gestion d'une personne charger d'améliorer l'esthétique du site et le contenu
 	- Discussion sur Slack pour différents problèmes sur le site
@@ -44,6 +64,12 @@
 	- StateMachine - pour suivre les états du robot et élaborer une stratégie
 	- Communication - interface avec l'ordinateur, à définir plus amplement
 
+# Interface Arduino / PC
+## Pourquoi
+- Faire du debug
+
+## Fonction
+- 
 
 # Coupe de France de Robotique
 ## Inscription
