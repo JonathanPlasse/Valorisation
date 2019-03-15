@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{report}
+\documentclass[11pt,a4paper]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
@@ -6,16 +6,156 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+	%table des matières, url cliquables
+\usepackage{hyperref}
 
-\title{Rapport Intermédiaire}
-\author{Jonathan Plasse}
-\date{Lundi 4 Mars}
+\usepackage{newcent} %police d'écriture (facultatif)
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} % marges
+
+\usepackage{textpos} % positionnement des logos
+
+	% sous-figures
+\usepackage{subcaption}
+
+%%% personnalisation aspect des parties (\part, \section, etc...)
+\usepackage{titlesec}
+% personnalisation chapitre
+\titleformat
+{\chapter}
+[display]
+{\centering\normalfont\large\scshape\bfseries}
+{\rule[3pt]{0.15\linewidth}{3pt}\quad\chaptertitlename~\thechapter\quad \rule[3pt]{0.15\linewidth}{3pt}}
+{2\baselineskip}
+{\rule{\linewidth}{0.5pt}\break\Huge}
+[\vspace{-0.5\baselineskip}\rule{\linewidth}{0.5pt}\vspace{0.65\baselineskip}]
+
+% personnalisation sections
+\titleformat
+{\section}
+[block]
+{\Large\scshape\bfseries}
+{\thesection}
+{\baselineskip}
+{}
+[\hrule\vspace{2pt}\hrule\vspace{0.8\baselineskip}]
+
+% personnalisation sous-section
+\titleformat
+{\subsection}
+[block]
+{\normalfont\large\bfseries}
+{\thesubsection}
+{\baselineskip}
+{}
+[\hrule\vspace{0.75\baselineskip}]
+
+% personnalisation sous-sous-section
+\titleformat
+{\subsubsection}
+[block]
+{\itshape\normalsize\bfseries}
+{\normalfont\bfseries \thesubsubsection}
+{\baselineskip}
+{}
+[\vspace{0.5\baselineskip}]
+
+%%% personnalisation table des matières
+\usepackage[]{titletoc} %pour personnaliser la table des matières
+
+% personnalisation chapitre
+\titlecontents
+{chapter}
+[100pt]
+{\addvspace{2pc}}
+{\scshape\bfseries\large\contentslabel[Chapitre~\thecontentslabel]{100pt}}
+{}
+{\hrule\vspace{2pt}\hrule}
+[]
+
+% personnalisation section
+\titlecontents
+{section}
+[25pt]
+{\addvspace{3pt}}
+{\normalfont\scshape\contentslabel{20pt}}
+{}
+{\normalsize\dotfill\bfseries\thecontentspage}
+[]
+
+% personnalisation sous-section
+\titlecontents
+{subsection}
+[75pt]
+{}
+{\small\contentslabel{30pt}}
+{}
+{\normalsize\dotfill\small\thecontentspage}
+[]
+
+% personnalisation sous-sous-section
+\titlecontents
+{subsubsection}
+[125pt]
+{}
+{\normalfont\footnotesize\contentslabel{30pt}\itshape}
+{}
+{\normalsize\dotfill\footnotesize\itshape\thecontentspage}
+[]
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} %faire des traits sur toute la largeur de la page
 
 \begin{document}
-\maketitle
+\begin{titlepage}
+
+	\begin{textblock*}{6cm}(-10pt,0pt)
+	\includegraphics[scale=0.7]{logo_tps.png}
+	\end{textblock*}
+
+	\begin{textblock*}{6cm}(375pt,-5pt)
+	\includegraphics[scale=0.06]{logo_arts.png}
+	\end{textblock*}
+
+
+  \begin{sffamily}
+    \begin{center}
+
+      \vfill
+      \textsc{\LARGE Valorisation de l'engagement étudiant}\\[0.5cm]
+
+      \textsc{\Large Association Robot Télécom Strasbourg}\\[1cm]
+
+      % Title
+      \HRule\\[0.4cm]
+      {\huge \bfseries Rapport intermédiaire\\[0.4cm]}
+      \HRule\\[1cm]
+
+      \textsc{\Large Jonathan Plasse}\\[1cm]
+
+      \textsc{\large Vendredi 15 Mars}
+
+
+
+      \vfill
+
+      % Bottom of the page
+      {\large Année universitaire 2018 -- 2019}
+
+    \end{center}
+  \end{sffamily}
+\end{titlepage}
+
+\renewcommand{\thepage}{\roman{page}}
+
+\tableofcontents %table des matières
+
+% \listoffigures %table des figures
+
+% \listoftables %table des tableaux
 
 \chapter*{Introduction}
+  \renewcommand{\thepage}{\arabic{page}}
+  \setcounter{page}{1}
+
   Dès le début de cette année je me suis investi dans l'association robot dans le but de l'améliorer et la promouvoir.
   Pour cela je me suis investi autant dans les projets robotique de l'ARTS que dans l'administration.
   Mon but étant de mettre en place des systèmes qui permettront la transmission de connaissance et de savoir pour les générations futures de l'association.
@@ -33,7 +173,7 @@
       Une base roulante est ce qui permet au robot de se déplacer. Le but de ce projet de fournir une méthode pour en concevoir et programmer une. Ma partie sur ce projet est la programmation.
 
     \subsection{Recherches}
-      N'ayant aucune connaissance au préalable, j'ai effectuer des recherche sur tout d'abord sur comment asservir un moteur à courant continu car c'est autour de ceci que l'on peut construire un code de déplacement. Ensuite, j'ai chercher des projets similaire au mien.
+      N'ayant aucune connaissance au préalable, j'ai effectuer des recherches sur les façon d'asservir un moteur à courant continu car c'est autour de ceci que l'on peut construire un code de déplacement. J'ai d'ailleurs chercher des projets similaire au mien.
       J'ai couplé la recherche avec l'implémentation de solutions trouvés. Ce qui permet de vérifier si l'on est sur la bonne voie.
       Quelques équipes participant à la coupe de France de robotique on mis à disposition des explications sur le fonctionnement de leur code de déplacement. Comme Cubot, ClubElek, RCVA…
       Au fur et à mesure de mes recherche j'ai établi une liste de fonction à implémenter pour le code de déplacement de la base roulante.
@@ -52,14 +192,20 @@
         Pour l'asservissement, j'ai utilisé en premier la bibliothèque PID de Brett Beauregard. Mais j'ai ensuite implémenter un PID.
       \subsubsection{Génération des consignes de vitesse}
         J'utilise un asservissement en position au dessus de l'asservissement en vitesse. Un problème est apparu quand j'ai implémenter cette solution car le robot dérape à cause d'une accélération trop forte. Ainsi j'ai implémenter un profil trapésoïdal de vitesse.
+
         Pour l'asservissement en position il faut aussi connaître la position actuelle du robot. C'est pourquoi j'ai implémenter une odométrie
       \subsubsection{Génération de trajectoire}
+        Les déplacements du robot consiste à se déplacer en ligne droite ou à tourner sur lui même. Ainsi, l'odométrie du robot est plus fiable. La génération de trajectoir a pour rôle de générer les commandes avancer en ligne droite ou tourner sur lui même en fonction de la destination et des obstacles fixes (murs) ou mobile (robots).
+
+        Je n'ai pas encore réaliser son implémentation.
 
   \section{Interface Arduino / PC}
     \subsection{Pourquoi}
-      Pouvoir interragir avec l'arduino à partir d'un ordinateur, et ainsi pouvoir contr\^oler l'arduino, obtenir des données et déboguer.
+      L'interface a pour but d'interragir avec l'arduino depuis un ordinateur, et ainsi pouvoir contr\^oler l'arduino, obtenir des données et déboguer.
 
-    \subsection{}
+    \subsection{Implémentation}
+      J'ai choisi d'utiliser Python comme langage de programmation pour le programme sur l'ordinateur car c'est multiplatforme et plus facile à prendre en main.
+      Pour le transfert de donnée, j'ai choisi d'envoyer des variables, tableaux ou structure en binaire.
 
   \section{Utilitaire de réglage de PID}
     \subsection{Pourquoi}
@@ -73,14 +219,38 @@
       Une fois ces constantes obtenus, j'utilise l'outil \texttt{pidTuner}, et obtient ainsi les coefficients du PID en fonction du temps de réponse et l'amortissement.
 
     \subsection{Futures améliorations}
+      J'aimerai ne pas utiliser matlab dans cet utilitaire car j'aimerai partager cet utilitaire or matlab n'est pas gratuit.
+      De plus il serait plus pratique de n'avoir qu'un script python qui s'occupe de tout.
 
   \section{Site Internet}
-    \subsection{Choix de technologie}
-    \subsection{Formation}
-    \subsection{Réalisation}
+    \subsection{Pourquoi}
+      Besoin de refaire le site web à cause de problème d'hébergement.
+
+    \subsection{Choix}
+      \subsubsection{Hébergement}
+        J'ai choisi d'utiliser \emph{GitHub Pages} pour héberger le site internet car c'est gratuit facile à maintenir en groupe et nous utilisons déjà GitHub.
+
+      \subsubsection{Technologie}
+        Pour générer le site, j'ai choisi \emph{Jekyll} un générateur de site statique. Je l'ai choisi car il est compatible avec github et simble à utilisé.
+
+      \subsubsection{Nom de domaine}
+        Le nom de domaine du site internet était initialement :
+
+        \emph{associationrobottelecomstrasbourg.github.io}, c'est l'adresse par défaut que \emph{GitHub} fournit.
+
+        Nous avons donc choisi d'utilisé un nom de domaine de notre choix : \emph{robot-ps.com}
+
+      \subsubsection{Langue}
+        Le site internet est en anglais car nous ne voulons pas limiter notre contenu au communauté francophone.
+
   \section{Future projet}
+    Voici les différents futures projets prévu.
+
     \subsection{Formation sur ESP8266}
+      L'ESP8266 est un microcontrolleur qui a un module Wifi intégré et serait utile pour contr\^oller à distance un robot.
+
     \subsection{Formation sur ROS}
+      ROS est très utilisé dans le domaine de la robotique. Apporté à l'association les connaissances pour le prendre en main me semble important.
 
 \chapter{Gestion de l'association}
   En ce début de cette année scolaire 2018/2019, Augustin Bielefeld et moi même avons établis différents sujets de réflexions afin d'améliorer le fonctionnement de l'association.
@@ -96,7 +266,7 @@
 
     \subsection{Slack}
       \subsubsection{Qu'est ce que Slack}
-        Slack est un outil de communication très adapter pour collaborer. Il dispose de chaînes accessible à tout les membres et d'autres privées pour discuter à une personne uniquement. Une chaîne est un fil de discussion où chacun peut poster des messages. Chaque chaîne à un thème, ce qui permet d'organiser les discussions et de facilement retrouver une information.
+        Slack est un outil de communication très adapter pour collaborer. Il comporte des chaînes accessible à tout les membres et d'autres privées pour discuter à une personne uniquement. Une chaîne est un fil de discussion où chacun peut poster des messages. Chaque chaîne à un thème, ce qui permet d'organiser les discussions et de facilement retrouver une information.
 
       \subsubsection{Pourquoi l'utiliser}
         J'ai choisi d'utiliser Slack car il permet aux membres de l'association d'échanger en dehors des séances du samedi après-midi et ainsi cela permet que les différents membres de l'association se tienne informer et motive à travailler en dehors des séances. De plus, la possibilité de séparer les discussions en plusieurs chaînes permet de savoir directement quel est le contexte du message.
@@ -114,12 +284,14 @@
         Trello est un outil de gestion qui permet de faire des listes. Une liste est constitués de plusieurs cartes (éléments). Une carte peut contenir une description, des checlists, une date d'échéance, des étiquettes, un ou plusieurs responsables et un espace commentaire.
 
       \subsubsection{Pourquoi l'utiliser}
-        J'ai choisi d'utiliser Trello
+        J'ai choisi d'utiliser Trello car il permet vraiment de mettre en évidence de manière claire et précise les différents éléments à faire, à venir…
 
     \subsection{GitHub}
       \subsubsection{Qu'est ce que GitHub}
+        \emph{GitHub} est un outil en ligne qui couplé avec git permet de faire du versionnage, sauvegarder et partager ses projets.
+
       \subsubsection{Pourquoi l'utiliser}
-      \subsubsection{Mise en place}
+        L'ARTS a beaucoup de projet et produit ainsi beaucoup de code et fichier qui ont besoin d'être ligne pour le partage et 
 
   \section{Déroulement d'un Conseil d'Administration}
     \subsection{Avant le CA}

@@ -4,3 +4,7 @@
 *.log
 *.pdf
 *.synctex.gz
+*.lof
+*.out
+*.toc
+*.lot
