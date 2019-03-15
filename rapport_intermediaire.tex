@@ -157,13 +157,13 @@
   \setcounter{page}{1}
 
   Dès le début de cette année je me suis investi dans l'association robot dans le but de l'améliorer et la promouvoir.
-  Pour cela je me suis investi autant dans les projets robotique de l'ARTS que dans l'administration.
+  Pour cela je me suis investi autant dans les projets robotiques de l'ARTS que dans l'administration.
   Mon but étant de mettre en place des systèmes qui permettront la transmission de connaissance et de savoir pour les générations futures de l'association.
 
   Pour cela, je travaille sur un code de contr\^ole d'une base roulante compréhensible et modulaire afin qu'il soit réutilisable dans les années à venir.
   Je suis aussi en train de réaliser des utilitaires pour pouvoir régler les paramètres des robots facilement. Par exemple, un utilitaire pour régler facilement le PID d'un moteur.
 
-  De plus je m'investis aussi dans l'administration de l'ARTS en tant que responsable coupe et membre du bureau. Je t\^ache à améliorer et faciliter la gestion de l'association.
+  De plus, je m'investis aussi dans l'administration de l'ARTS en tant que responsable coupe et membre du bureau. Je t\^ache à améliorer et faciliter la gestion de l'association.
 
 \chapter{Réalisation de projets robotiques}
 
@@ -173,54 +173,54 @@
       Une base roulante est ce qui permet au robot de se déplacer. Le but de ce projet de fournir une méthode pour en concevoir et programmer une. Ma partie sur ce projet est la programmation.
 
     \subsection{Recherches}
-      N'ayant aucune connaissance au préalable, j'ai effectuer des recherches sur les façon d'asservir un moteur à courant continu car c'est autour de ceci que l'on peut construire un code de déplacement. J'ai d'ailleurs chercher des projets similaire au mien.
-      J'ai couplé la recherche avec l'implémentation de solutions trouvés. Ce qui permet de vérifier si l'on est sur la bonne voie.
-      Quelques équipes participant à la coupe de France de robotique on mis à disposition des explications sur le fonctionnement de leur code de déplacement. Comme Cubot, ClubElek, RCVA…
+      N'ayant aucune connaissance au préalable, j'ai effectué des recherches sur les façons d'asservir un moteur à courant continu, car c'est autour de ceci que l'on peut construire un code de déplacement. J'ai d'ailleurs cherché des projets similaires au mien.
+      J'ai couplé la recherche avec l'implémentation des solutions trouvées. Ce qui permet de vérifier si l'on est sur la bonne voie.
+      Quelques équipes participant à la coupe de France de robotique on mit à disposition des explications sur le fonctionnement de leur code de déplacement. Comme Cubot, ClubElek, RCVA…
       Au fur et à mesure de mes recherche j'ai établi une liste de fonction à implémenter pour le code de déplacement de la base roulante.
 
     \subsection{Fonctions à implémenter}
       \subsubsection{Asservissement des moteurs}
-        Comme il est expliquer précédemment, l'asservissement des moteurs est la base du code de déplacement. Ici, j'ai choisi d'asservir les moteurs en vitesse.
+        Comme il est expliqué précédemment, l'asservissement des moteurs est la base du code de déplacement. Ici, j'ai choisi d'asservir les moteurs en vitesse.
 
-        Pour réaliser cette asservissement, il faut pouvoir mesurer la vitesse des moteurs. Ainsi, j'utilise les codeurs à quadrature de phase des moteurs.
-        Un codeur à quadrature de phase génère deux signaux carré déphasé l'un par rapport à l'autre. On peut ainsi déduire la position en regardant quand l'un des deux signals change.
+        Pour réaliser cet asservissement, il faut pouvoir mesurer la vitesse des moteurs. Ainsi, j'utilise les codeurs à quadrature de phase des moteurs.
+        Un codeur à quadrature de phase génère deux signaux carrés déphasés l'un par rapport à l'autre. On peut ainsi déduire la position en regardant quand l'un des deux signal change.
         %image de quadrature de phase
-        Pour récuper la position d'un codeur à quadrature de phase j'utilise la bibliothèque de Encoder de Paul Stoffregen qui utilise les interruptions pour calculer la position d'un codeur. Cette bibliothèque peut utiliser 0, 1 ou 2 interruptions pour un codeur. 2 interruption utilise une interruption pour chaque signal, c'est la solution la plus fiable. 1 interruption n'en utilise qu'une pour un seul signal ce qui est moins fiable mais c'est négligeable dans notre cas car l'arduino est assez rapide. 0 interruption est une solution à éviter dans la mesure du possible.
+        Pour récupérer la position d'un codeur à quadrature de phase j'utilise la bibliothèque de Encoder de Paul Stoffregen qui utilise les interruptions pour calculer la position d'un codeur. Cette bibliothèque peut utiliser 0, 1 ou 2 interruptions pour un codeur. 2 interruptions utilise une interruption pour chaque signal, c'est la solution la plus fiable. 1 interruption n'en utilise qu'une pour un seul signal ce qui est moins fiable mais c'est négligeable dans notre cas, car l'arduino est assez rapide. 0 interruption est une solution à éviter dans la mesure du possible.
 
         Pour ce projet, j'ai choisi d'utiliser la solution avec une interruption par codeur à cause d'une contrainte technique : l'arduino n'a que deux interruptions externes.
 
-        Pour l'asservissement, j'ai utilisé en premier la bibliothèque PID de Brett Beauregard. Mais j'ai ensuite implémenter un PID.
+        Pour l'asservissement, j'ai utilisé en premier la bibliothèque PID de Brett Beauregard. Mais j'ai ensuite implémenté un PID.
       \subsubsection{Génération des consignes de vitesse}
-        J'utilise un asservissement en position au dessus de l'asservissement en vitesse. Un problème est apparu quand j'ai implémenter cette solution car le robot dérape à cause d'une accélération trop forte. Ainsi j'ai implémenter un profil trapésoïdal de vitesse.
+        J'utilise un asservissement en position au-dessus de l'asservissement en vitesse. Un problème est apparu quand j'ai implémenté cette solution, car le robot dérape à cause d'une accélération trop forte. Ainsi j'ai implémenté un profil trapézoïdal de vitesse.
 
-        Pour l'asservissement en position il faut aussi connaître la position actuelle du robot. C'est pourquoi j'ai implémenter une odométrie
+        Pour l'asservissement en position il faut aussi connaître la position actuelle du robot. C'est pourquoi j'ai implémenté une odométrie
       \subsubsection{Génération de trajectoire}
-        Les déplacements du robot consiste à se déplacer en ligne droite ou à tourner sur lui même. Ainsi, l'odométrie du robot est plus fiable. La génération de trajectoir a pour rôle de générer les commandes avancer en ligne droite ou tourner sur lui même en fonction de la destination et des obstacles fixes (murs) ou mobile (robots).
+        Les déplacements du robot consistent à se déplacer en ligne droite ou à tourner sur lui-même. Ainsi, l'odométrie du robot est plus fiable. La génération de trajectoires a pour rôle de générer les commandes avancer en ligne droite ou tourner sur lui-même en fonction de la destination et des obstacles fixes (murs) ou mobile (robots).
 
-        Je n'ai pas encore réaliser son implémentation.
+        Je n'ai pas encore réalisé son implémentation.
 
   \section{Interface Arduino / PC}
     \subsection{Pourquoi}
-      L'interface a pour but d'interragir avec l'arduino depuis un ordinateur, et ainsi pouvoir contr\^oler l'arduino, obtenir des données et déboguer.
+      L'interface a pour but d'interagir avec l'arduino depuis un ordinateur et ainsi pouvoir contr\^oler l'arduino, obtenir des données et déboguer.
 
     \subsection{Implémentation}
-      J'ai choisi d'utiliser Python comme langage de programmation pour le programme sur l'ordinateur car c'est multiplatforme et plus facile à prendre en main.
-      Pour le transfert de donnée, j'ai choisi d'envoyer des variables, tableaux ou structure en binaire.
+      J'ai choisi d'utiliser Python comme langage de programmation pour le programme sur l'ordinateur, car c'est multi-platforme et plus facile à prendre en main.
+      Pour le transfert de données, j'ai choisi d'envoyer des variables, tableaux ou structure en binaire.
 
   \section{Utilitaire de réglage de PID}
     \subsection{Pourquoi}
-      L'utilitaire de réglage de PID à pour but de d'obtenir facilement les coefficients du PID pour un moteur à courant continu.
+      L'utilitaire de réglage de PID à pour but d'obtenir facilement les coefficients du PID pour un moteur à courant continu.
 
     \subsection{Principe}
       Tout d'abord, je crée un modèle du moteur de la forme \(\frac{K\tau}{(s+\tau)}\). Je néglige la constante de temps électrique du système qui est négligeable devant la constante de temps mécanique.
 
-      Pour obtenir la constante de temps mécanique \(\tau \) et le gain du système \(K\), je mesure la réponse indiciel du moteur plusieurs fois pour faire une moyenne. À partir de cette réponse indiciel moyenne, je fais une régression. J'obtiens ainsi \(K\) et \(\tau \).
+      Pour obtenir la constante de temps mécanique \(\tau \) et le gain du système \(K\), je mesure la réponse indicielle du moteur plusieurs fois pour faire une moyenne. À partir de cette réponse indicielle moyenne, je fais une régression. J'obtiens ainsi \(K\) et \(\tau \).
 
       Une fois ces constantes obtenus, j'utilise l'outil \texttt{pidTuner}, et obtient ainsi les coefficients du PID en fonction du temps de réponse et l'amortissement.
 
     \subsection{Futures améliorations}
-      J'aimerai ne pas utiliser matlab dans cet utilitaire car j'aimerai partager cet utilitaire or matlab n'est pas gratuit.
-      De plus il serait plus pratique de n'avoir qu'un script python qui s'occupe de tout.
+      J'aimerais ne pas utiliser matlab dans cet utilitaire, car j'aimerais partager cet utilitaire or matlab n'est pas gratuit.
+      De plus, il serait plus pratique de n'avoir qu'un script python qui s'occupe de tout.
 
   \section{Site Internet}
     \subsection{Pourquoi}
@@ -228,10 +228,10 @@
 
     \subsection{Choix}
       \subsubsection{Hébergement}
-        J'ai choisi d'utiliser \emph{GitHub Pages} pour héberger le site internet car c'est gratuit facile à maintenir en groupe et nous utilisons déjà GitHub.
+        J'ai choisi d'utiliser \emph{GitHub Pages} pour héberger le site internet, car c'est gratuit facile à maintenir en groupe et nous utilisons déjà GitHub.
 
       \subsubsection{Technologie}
-        Pour générer le site, j'ai choisi \emph{Jekyll} un générateur de site statique. Je l'ai choisi car il est compatible avec github et simble à utilisé.
+        Pour générer le site, j'ai choisi \emph{Jekyll} un générateur de site statique. Je l'ai choisi, car il est compatible avec github et simple à utiliser.
 
       \subsubsection{Nom de domaine}
         Le nom de domaine du site internet était initialement :
@@ -241,7 +241,7 @@
         Nous avons donc choisi d'utilisé un nom de domaine de notre choix : \emph{robot-ps.com}
 
       \subsubsection{Langue}
-        Le site internet est en anglais car nous ne voulons pas limiter notre contenu au communauté francophone.
+        Le site internet est en anglais car nous ne voulons pas limiter notre contenu à la communauté francophone.
 
   \section{Future projet}
     Voici les différents futures projets prévu.
@@ -253,74 +253,47 @@
       ROS est très utilisé dans le domaine de la robotique. Apporté à l'association les connaissances pour le prendre en main me semble important.
 
 \chapter{Gestion de l'association}
-  En ce début de cette année scolaire 2018/2019, Augustin Bielefeld et moi même avons établis différents sujets de réflexions afin d'améliorer le fonctionnement de l'association.
+  En ce début de cette année scolaire 2018/2019, Augustin Bielefeld et moi-même avons établis différents sujets de réflexions afin d'améliorer le fonctionnement de l'association.
 
   \section{Outils de gestion}
     L'ARTS utilisait auparavant deux clouds, un pour les programmes des projets de l'association et l'autre pour tout ce qui concernait l'administration.
-    Le seul outils de communication entre les membres de l'association était les mails.
-    J'ai ainsi choisi différents service sur Internet pour complémenter ou supprimer les anciens outils de gestion.
+    Le seul outil de communication entre les membres de l'association était les mails.
+    J'ai ainsi choisi différents services sur Internet pour complémenter ou supprimer les anciens outils de gestion.
 
     \subsection{Adresse mail}
-      L'adresse de l'association club.robot.tephystras@gmail.com n'étant pas claire et explicite. J'ai créer la nouvelle adresse robot.telecom.strasbourg@gmail.com.
-      De plus, j'ai utiliser cette nouvelle adresse pour créer un compte sur tout les outils utiliser et chacun d'eux sont administrateur.
+      L'adresse de l'association club.robot.tephystras@gmail.com n'étant pas claire et explicite. J'ai créé la nouvelle adresse robot.telecom.strasbourg@gmail.com.
+      De plus, j'ai utilisé cette nouvelle adresse pour créer un compte sur tous les outils utiliser et chacun d'eux sont administrateurs.
 
     \subsection{Slack}
       \subsubsection{Qu'est ce que Slack}
-        Slack est un outil de communication très adapter pour collaborer. Il comporte des chaînes accessible à tout les membres et d'autres privées pour discuter à une personne uniquement. Une chaîne est un fil de discussion où chacun peut poster des messages. Chaque chaîne à un thème, ce qui permet d'organiser les discussions et de facilement retrouver une information.
+        Slack est un outil de communication très adapté pour collaborer. Il comporte des chaînes accessibles à tous les membres et d'autres privées pour discuter à une personne uniquement. Une chaîne est un fil de discussion où chacun peut poster des messages. Chaque chaîne à un thème, ce qui permet d'organiser les discussions et de facilement retrouver une information.
 
       \subsubsection{Pourquoi l'utiliser}
-        J'ai choisi d'utiliser Slack car il permet aux membres de l'association d'échanger en dehors des séances du samedi après-midi et ainsi cela permet que les différents membres de l'association se tienne informer et motive à travailler en dehors des séances. De plus, la possibilité de séparer les discussions en plusieurs chaînes permet de savoir directement quel est le contexte du message.
+        J'ai choisi d'utiliser Slack, car il permet aux membres de l'association d'échanger en dehors des séances du samedi après-midi et ainsi cela permet que les différents membres de l'association se tienne informé et motive à travailler en dehors des séances. De plus, la possibilité de séparer les discussions en plusieurs chaînes permetent de savoir directement quel est le contexte du message.
 
       \subsubsection{Mise en place de Slack}
-        Pendant une séance de l'ARTS, j'ai expliquer que j'avais mis en place un Slack pour l'ARTS et expliquer pourquoi j'ai mis en place cette outils.
-        J'ai invité tout les membres de l'association sur le slack grâce à la liste des adresses mails.
+        Pendant une séance de l'ARTS, j'ai expliqué que j'avais mis en place un Slack pour l'ARTS et expliquer pourquoi j'ai mis en place cet outils.
+        J'ai invité tous les membres de l'association sur le slack grâce à la liste des adresses mails.
 
       \subsubsection{Adoption de l'outils}
-        Pendant les premières semaines après l'installation du Slack, seul les membres du bureau utilisait le Slack. Pour faire face à ce problème, j'ai rapeller pendant plusieurs séances que l'existence du Slack et peu à peu les membres ce sont mis à interragir.
+        Pendant les premières semaines après l'installation du Slack, seul les membres du bureau utilisait le Slack. Pour faire face à ce problème, j'ai rappeller pendant plusieurs séances que l'existence du Slack et peu à peu les membres se sont mis à interagir.
         Actuellement, le Slack est plut\^ot actif.
 
     \subsection{Trello}
       \subsubsection{Qu'est ce que Trello}
-        Trello est un outil de gestion qui permet de faire des listes. Une liste est constitués de plusieurs cartes (éléments). Une carte peut contenir une description, des checlists, une date d'échéance, des étiquettes, un ou plusieurs responsables et un espace commentaire.
+        Trello est un outil de gestion qui permet de faire des listes. Une liste est constituée de plusieurs cartes (éléments). Une carte peut contenir une description, des checklists, une date d'échéance, des étiquettes, un ou plusieurs responsables et un espace commentaire.
 
       \subsubsection{Pourquoi l'utiliser}
-        J'ai choisi d'utiliser Trello car il permet vraiment de mettre en évidence de manière claire et précise les différents éléments à faire, à venir…
+        J'ai choisi d'utiliser Trello, car il permet vraiment de mettre en évidence de manière claire et précise les différents éléments à faire, à venir…
 
     \subsection{GitHub}
       \subsubsection{Qu'est ce que GitHub}
         \emph{GitHub} est un outil en ligne qui couplé avec git permet de faire du versionnage, sauvegarder et partager ses projets.
 
       \subsubsection{Pourquoi l'utiliser}
-        L'ARTS a beaucoup de projet et produit ainsi beaucoup de code et fichier qui ont besoin d'être ligne pour le partage et 
-
-  \section{Déroulement d'un Conseil d'Administration}
-    \subsection{Avant le CA}
-    \subsection{Pendant le CA}
-    \subsection{Après le CA}
-
-  % \section{Mon poste de responsable coupe}
-  %   Voici ce que j'ai fait en tant que responsable coupe depuis le début de l'année.
-  %   \subsection{Coupe de France de robotique}
-  %     Comme chaque année l'ARTS participe à la coupe de France de robotique
-  %     \subsubsection{Inscription sur Poolzor}
-  %       changement d'adresse mail
-  %       et remplissage des différentes information
-  %     \subsubsection{Paiement}
-  %       envoie du chèque et surveiller que l'étape du paiement soit validé.
-  %   \subsection{Coupe de Belgique}
-  %     \subsubsection{Mise en attente}
-  %     \subsubsection{Acceptation}
-  %     \subsubsection{Estimation des coûts}
-  %       Trajet location voiture, carburant, péage et hébergement
-  %     \subsubsection{Constitution de l'équipe}
-  %     \subsubsection{Paiement}
-  %   \subsection{Suvi de l'avancement des projets}
-  %
-  % \section{Transmission des connaissance}
-  %   \subsection{Création de processus sur le Trello}
-  %   \subsection{Faire un carnet de passation}
-  %   \subsection{Tirer parti de l'engagement étudiant}
+        L'ARTS a beaucoup de projet et produit ainsi beaucoup de code et fichier qui ont besoin d'être ligne pour le partage et pouvoir revenir en arrière si un problème arrive.
 
 \chapter*{Conclusion}
+  Depuis le début de l'année, j'ai ainsi travaillé sur différents projets autant robotique que de gestion et je continue à chercher de nouveaux projets intéressants qui peuvent apporter des savoirs intéressants à l'ARTS.
 
 \end{document}
